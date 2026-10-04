@@ -6,9 +6,9 @@ can approve or reject them. Valid safe verdicts continue normally; suspicious
 verdicts enter the queue only when configured. API failures continue through
 native Discourse posting/moderation without inventing a safe verdict.
 
-**Preparation status:** version 1.0.0 candidate, local implementation. Real-core
-verification and publication outcome are recorded in `PUBLICATION.md`; do not
-assume the planned GitHub URL or a Meta topic has been published.
+**Preparation status:** version 1.0.0 candidate verified by 41 passing real-core
+tests on both Discourse v2026.9.0 and main commit 67bc74d0. Publication outcome is
+recorded in `PUBLICATION.md`; do not assume a Meta topic has been published.
 
 ## Compatibility and installation
 

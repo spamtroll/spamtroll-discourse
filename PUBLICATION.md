@@ -2,10 +2,24 @@
 
 ## Outcome
 
-As of 4 October 2026, this is a local version 1.0.0 candidate. No GitHub repository,
-release or Meta announcement has been published by this task. Integration verification
-is underway against Discourse v2026.9.0 and current main. Do not describe pending
-checks as passing or the intended repository URL as an installed public release.
+As of 4 October 2026, this is a locally verified version 1.0.0 candidate. GitHub
+repository/release publication is the next step; no Meta announcement has been sent.
+Do not describe the intended repository URL as published until it is verified below.
+
+## Completed verification
+
+| Discourse source | Core commit | Result |
+| --- | --- | --- |
+| v2026.9.0 | 343b20f9 | 41 examples, no failures; 8.37 seconds plus boot. |
+| main, checked 4 October 2026 | 67bc74d0 | 41 examples, no failures; 8.33 seconds plus boot. |
+
+Tests ran in native-arm64 `discourse/discourse_test:release`, image digest
+`sha256:b61cd82e98a270c9927b1fe56e35042bfa1c17f30b2b3517d044b406625b9e25`,
+with Ruby 3.4.11, PostgreSQL 18 and Redis. Suites exercise actual moderator queue and
+approval, new topic/reply creation, native approval reasons, API errors/timeouts,
+malformed/oversized responses, private/staff/trust exclusions, optional metadata and
+server-only secret settings. API requests are offline stubs and no mail is sent.
+Disposable test containers have been removed. Ruby/Bash/YAML syntax checks pass.
 
 The official [Plugin category](https://meta.discourse.org/c/customization/plugin/22)
 is the identified community publication destination. An authorized Meta account and
@@ -32,8 +46,9 @@ unavailable API calls do not invent a clean verdict.
 Plugin software is MIT licensed; the hosted service requires a Spamtroll account
 and platform API key. Installation, limits and data flow are documented in README.
 
-Before posting, replace this sentence with the exact tested Discourse versions,
-passing test counts and public repository/release/checksum links. Do not imply
+Verified with 41 passing tests on each of Discourse v2026.9.0 (343b20f9) and main
+(67bc74d0), covering real moderator queue/approval and failure/privacy paths.
+Before posting, insert verified public repository/release/checksum links. Do not imply
 hosted-service pricing, certification, official endorsement or publication that
 has not been verified.
 
