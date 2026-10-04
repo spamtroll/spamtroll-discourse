@@ -1,5 +1,9 @@
 name: Discourse plugin verification
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore: ["**/*.md", "LICENSE"]
+  pull_request:
+    paths-ignore: ["**/*.md", "LICENSE"]
 permissions:
   contents: read
 jobs:

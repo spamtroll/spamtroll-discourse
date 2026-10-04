@@ -2,9 +2,11 @@
 
 ## Outcome
 
-As of 4 October 2026, this is a locally verified version 1.0.0 candidate. GitHub
-repository/release publication is the next step; no Meta announcement has been sent.
-Do not describe the intended repository URL as published until it is verified below.
+The public [source repository](https://github.com/spamtroll/spamtroll-discourse)
+was created and its main branch verified on 4 October 2026. Version 1.0.0 is
+locally verified; release upload is the next step. No Meta announcement has been
+sent. A copy of this document inside an archive reflects its build-time checkpoint;
+consult the current repository copy for subsequent publication evidence.
 
 ## Completed verification
 
@@ -48,7 +50,9 @@ and platform API key. Installation, limits and data flow are documented in READM
 
 Verified with 41 passing tests on each of Discourse v2026.9.0 (343b20f9) and main
 (67bc74d0), covering real moderator queue/approval and failure/privacy paths.
-Before posting, insert verified public repository/release/checksum links. Do not imply
+Source: https://github.com/spamtroll/spamtroll-discourse
+
+Before posting, insert the verified release/checksum links. Do not imply
 hosted-service pricing, certification, official endorsement or publication that
 has not been verified.
 

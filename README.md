@@ -6,9 +6,10 @@ can approve or reject them. Valid safe verdicts continue normally; suspicious
 verdicts enter the queue only when configured. API failures continue through
 native Discourse posting/moderation without inventing a safe verdict.
 
-**Preparation status:** version 1.0.0 candidate verified by 41 passing real-core
-tests on both Discourse v2026.9.0 and main commit 67bc74d0. Publication outcome is
-recorded in `PUBLICATION.md`; do not assume a Meta topic has been published.
+Version 1.0.0 is verified by 41 passing real-core tests on both Discourse v2026.9.0
+and main commit 67bc74d0. The public [source repository](https://github.com/spamtroll/spamtroll-discourse)
+is available. Release/Meta publication evidence is recorded in `PUBLICATION.md`;
+do not assume a Meta announcement has been sent.
 
 ## Compatibility and installation
 
@@ -17,10 +18,10 @@ main; compatibility is evidence for the tested commits, not a guarantee for ever
 future release. A hosting environment that allows third-party server plugins is
 required, together with a Spamtroll account/platform API key.
 
-After the repository is published, use the standard Discourse plugin installation
+Use the standard Discourse plugin installation
 procedure in [the official guide](https://meta.discourse.org/t/install-a-plugin/19157),
-then rebuild the application. The intended repository URL is
-`https://github.com/spamtroll/spamtroll-discourse` (not yet verified as published).
+then rebuild the application. The repository URL is
+`https://github.com/spamtroll/spamtroll-discourse`.
 For a local development/test installation, place this checkout in Discourse's
 `plugins/spamtroll-discourse` directory or use the test harness below.
 
@@ -75,5 +76,5 @@ After committing a verified candidate, `bash scripts/build.sh` archives the comm
 runtime, settings, documentation and MIT notice into `dist/` with a SHA256 manifest.
 Generated dependency checkouts, caches, tests and local credentials are excluded.
 
-Support/reporting and release links become actionable when the repository is
-published. See `PUBLICATION.md` for the reviewable announcement and actual outcome.
+Report issues in the public repository. See `PUBLICATION.md` for release evidence,
+the reviewable announcement and actual publication outcome.
