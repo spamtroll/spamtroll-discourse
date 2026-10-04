@@ -33,6 +33,13 @@ RSpec.describe DiscourseSpamtroll::Client do
     end
   end
 
+  [-12.5, 0, 101, 250.125].each do |score|
+    it "accepts a real additive score of #{score} without applying a percentage range" do
+      stub_json(response("blocked", score))
+      expect(described_class.scan(payload, api_key: key)).to eq(status: "blocked", score: score)
+    end
+  end
+
   [301, 401, 402, 422, 429, 500, 503].each do |status|
     it "fails open for HTTP #{status} without redirecting the key" do
       request = stub_json(response, status: status)
@@ -44,8 +51,9 @@ RSpec.describe DiscourseSpamtroll::Client do
   ["not JSON", "[]", "null", '{"success":false}', '{"status":"blocked","spam_score":99}',
    '{"success":true,"data":null}', '{"success":true,"data":{"status":"future","spam_score":99}}',
    '{"success":true,"data":{"status":"blocked","spam_score":"99"}}',
-   '{"success":true,"data":{"status":"blocked","spam_score":-1}}',
-   '{"success":true,"data":{"status":"blocked","spam_score":101}}'].each_with_index do |body, index|
+   '{"success":true,"data":{"status":"blocked","spam_score":null}}',
+   '{"success":true,"data":{"status":"blocked","spam_score":true}}',
+   '{"success":true,"data":{"status":"blocked","spam_score":1e999}}'].each_with_index do |body, index|
     it "fails open for malformed/unsupported verdict #{index}" do
       stub_json(body)
       expect(described_class.scan(payload, api_key: key)).to be_nil

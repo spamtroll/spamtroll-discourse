@@ -53,6 +53,23 @@ RSpec.describe "Spamtroll public post moderation" do
     expect(result.reviewable.payload["title"]).to eq(options[:title])
   end
 
+  it "queues a blocked reply with a real additive score over 100" do
+    stub_request(:post, endpoint).to_return(
+      body: { success: true, data: { status: "blocked", spam_score: 250.125 } }.to_json,
+      headers: { "Content-Type" => "application/json" },
+    )
+    expect { perform }.to change(ReviewableQueuedPost, :count).by(1).and change(Post, :count).by(0)
+  end
+
+  it "publishes a safe reply with a negative real additive score" do
+    request = stub_request(:post, endpoint).to_return(
+      body: { success: true, data: { status: "safe", spam_score: -12.5 } }.to_json,
+      headers: { "Content-Type" => "application/json" },
+    )
+    expect { perform }.to change(Post, :count).by(1).and change(ReviewableQueuedPost, :count).by(0)
+    expect(request).to have_been_requested.once
+  end
+
   %w[safe suspicious].each do |status|
     it "publishes #{status} by default" do
       verdict(status)

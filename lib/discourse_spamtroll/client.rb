@@ -21,7 +21,7 @@ module DiscourseSpamtroll
       request["Content-Type"] = "application/json"
       request["Accept"] = "application/json"
       request["X-API-Key"] = api_key
-      request["User-Agent"] = "SpamtrollDiscourse/1.0.0"
+      request["User-Agent"] = "SpamtrollDiscourse/1.0.1"
       request.body = JSON.generate(payload)
       http = Net::HTTP.new(ENDPOINT.host, ENDPOINT.port, nil)
       http.use_ssl = true
@@ -48,7 +48,7 @@ module DiscourseSpamtroll
       verdict = decoded["data"]
       return unless verdict.is_a?(Hash) && %w[safe suspicious blocked].include?(verdict["status"])
       score = verdict["spam_score"]
-      return unless score.is_a?(Numeric) && score.finite? && score.between?(0, 100)
+      return unless score.is_a?(Numeric) && score.finite?
 
       { status: verdict["status"], score: score }
     rescue StandardError => error

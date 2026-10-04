@@ -1,6 +1,13 @@
 # Changelog
 
-## 1.0.0 — candidate
+## 1.0.1 — 2026-10-04
+
+- Accept finite signed raw API scores; the backend uses an open-ended additive
+  scale, so negative safe results and blocked scores over 100 are valid.
+- Preserve strict status/envelope validation and reject nonnumeric/nonfinite scores.
+- Add client and real moderation regressions; high-score blocked posts enter review.
+
+## 1.0.0 — 2026-10-04
 
 - Public new topic/reply checks using the canonical platform-key scan API.
 - Human moderation through the native Discourse queue for blocked verdicts;

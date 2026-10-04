@@ -6,7 +6,7 @@ can approve or reject them. Valid safe verdicts continue normally; suspicious
 verdicts enter the queue only when configured. API failures continue through
 native Discourse posting/moderation without inventing a safe verdict.
 
-Version 1.0.0 is verified by 41 passing real-core tests on both Discourse v2026.9.0
+Version 1.0.1 is verified by 48 passing real-core tests on both Discourse v2026.9.0
 and main commit 67bc74d0. The public [source repository](https://github.com/spamtroll/spamtroll-discourse)
 is available. Release/Meta publication evidence is recorded in `PUBLICATION.md`;
 do not assume a Meta announcement has been sent.
@@ -53,8 +53,9 @@ restricted-category content are never submitted by this plugin.
 Requests have a five-second total deadline, smaller connection/read/write limits,
 no automatic retries and TLS certificate verification. Content over the API's
 64 KiB limit is skipped; it is not partially classified. Responses are bounded to
-64 KiB and require the canonical successful envelope, known status and numeric
-0–100 score. Invalid responses, transport/TLS errors, timeout, authentication,
+64 KiB and require the canonical successful envelope, known status and a finite numeric raw score. Raw scores are signed and additive;
+negative values and scores over 100 are valid. Moderation follows the API status,
+not a client-side percentage interpretation. Invalid responses, transport/TLS errors, timeout, authentication,
 quota and rate-limit errors all return to native posting/moderation.
 
 No API key, content, author identity, response body or remote error text is written

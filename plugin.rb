@@ -2,7 +2,7 @@
 
 # name: spamtroll-discourse
 # about: Queue spam verdicts for human moderation; allow posting during API failures.
-# version: 1.0.0
+# version: 1.0.1
 # authors: Spamtroll
 # url: https://github.com/spamtroll/spamtroll-discourse
 # required_version: 2026.9.0
