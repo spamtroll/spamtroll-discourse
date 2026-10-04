@@ -1,0 +1,23 @@
+name: Discourse plugin verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    container: discourse/discourse_test:release
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        discourse_ref: [v2026.9.0, main]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: plugin
+      - name: Fetch supported Discourse source
+        run: git clone --depth 1 --branch '${{ matrix.discourse_ref }}' https://github.com/discourse/discourse.git discourse
+      - name: Run real-core API failure and moderation tests
+        run: bash plugin/scripts/test_core.sh "$GITHUB_WORKSPACE/discourse" "$GITHUB_WORKSPACE/plugin"
+      - name: Build committed candidate
+        run: bash plugin/scripts/build.sh

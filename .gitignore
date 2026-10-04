@@ -1,0 +1,6 @@
+.discourse-test/
+.discourse-stable/
+.test-logs/
+.pnpm-store/
+dist/
+*.gem

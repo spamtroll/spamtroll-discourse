@@ -1,0 +1,16 @@
+plugins:
+  spamtroll_enabled:
+    default: false
+  spamtroll_api_key:
+    default: ""
+    secret: true
+  spamtroll_max_trust_level:
+    default: 1
+    min: 0
+    max: 4
+  spamtroll_review_suspicious:
+    default: false
+  spamtroll_send_author_email:
+    default: false
+  spamtroll_send_author_ip:
+    default: false

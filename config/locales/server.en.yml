@@ -1,0 +1,11 @@
+en:
+  site_settings:
+    spamtroll_enabled: "Scan eligible new public posts with Spamtroll and queue spam for moderator review."
+    spamtroll_api_key: "Platform API key from Spamtroll. Kept on the server; never sent to forum browsers."
+    spamtroll_max_trust_level: "Highest trust level whose new public posts are scanned. Staff are always skipped."
+    spamtroll_review_suspicious: "Also queue suspicious verdicts. Blocked verdicts are always queued."
+    spamtroll_send_author_email: "Include the author's email in scans. Enable only after reviewing your privacy notice."
+    spamtroll_send_author_ip: "Include the author's last known IP in scans. This is not necessarily the current request IP."
+  reviewables:
+    reasons:
+      spamtroll_spam: "Spamtroll identified this content as spam. A moderator must review it before publication."
