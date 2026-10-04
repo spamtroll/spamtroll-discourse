@@ -2,10 +2,14 @@
 
 ## Outcome
 
-The public source and original v1.0.0 release are available. A 1.0.1 patch
-corrects the raw-score domain: blocked scores over 100 now enter human review
-and negative scores remain valid. Source, CI and downloaded-asset evidence for
-the patch will be recorded after verification and release.
+The public [source repository](https://github.com/spamtroll/spamtroll-discourse)
+and [release v1.0.1](https://github.com/spamtroll/spamtroll-discourse/releases/tag/v1.0.1)
+are verified. The patch accepts finite signed additive scores; blocked scores over
+100 enter human review and negative scores remain valid. Release source is
+`db2cc0d`. Re-downloaded archive and sidecar match the local verified assets;
+SHA-256: `a2176854efb7551f933a574a531f6037cb61dee3c7cc29f38f93a276880b05bc`.
+Public [CI 37221048644](https://github.com/spamtroll/spamtroll-discourse/actions/runs/37221048644)
+passed both release/main jobs and package builds.
 
 The user instructed on 4 October 2026 to leave the Meta announcement as a ready
 draft. No Meta announcement has been sent. A document inside an archive reflects
@@ -65,6 +69,6 @@ This is a third-party plugin, with no claimed official Discourse endorsement.
 
 - [x] Actual supported-core verification and exact commits/results recorded.
 - [x] Committed distribution includes license and matches version 1.0.1.
-- [ ] Patch archive/release re-fetch and checksum verification pending publication.
+- [x] Patch archive/release re-fetched; committed version, nine files/license and checksum verified.
 - [x] User chose to retain the prepared Meta draft without sending (4 October 2026).
 - [x] No Meta topic URL is claimed; sending is deferred by the user.
