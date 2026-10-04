@@ -3,9 +3,14 @@
 ## Outcome
 
 The public [source repository](https://github.com/spamtroll/spamtroll-discourse)
-was created and its main branch verified on 4 October 2026. Version 1.0.0 is
-locally verified; release upload is the next step. No Meta announcement has been
-sent. A copy of this document inside an archive reflects its build-time checkpoint;
+was created and its main branch verified on 4 October 2026. Public
+[release v1.0.0](https://github.com/spamtroll/spamtroll-discourse/releases/tag/v1.0.0)
+was uploaded from source commit 54a7c6e and re-fetched successfully. Both public
+assets match the verified local archive and checksum; SHA256 is
+`9689429ae0ea34329eeb918548598edf567fb1c7f036677ddd40275c06a9dd1f`.
+GitHub [CI run 37214218032](https://github.com/spamtroll/spamtroll-discourse/actions/runs/37214218032)
+passed both release/main jobs including package build. No Meta announcement has
+been sent. A copy of this document inside an archive reflects its build-time checkpoint;
 consult the current repository copy for subsequent publication evidence.
 
 ## Completed verification
@@ -29,7 +34,7 @@ an explicit posting instruction are required. An announcement does not establish
 official Discourse endorsement. Keep the actual post URL/version/date below once
 published; do not fabricate a submission receipt.
 
-## Reviewable announcement draft — update evidence before sending
+## Reviewable announcement draft — not sent
 
 **Title:** Spamtroll: spam checks with moderator approval for public Discourse posts
 
@@ -52,15 +57,16 @@ Verified with 41 passing tests on each of Discourse v2026.9.0 (343b20f9) and mai
 (67bc74d0), covering real moderator queue/approval and failure/privacy paths.
 Source: https://github.com/spamtroll/spamtroll-discourse
 
-Before posting, insert the verified release/checksum links. Do not imply
-hosted-service pricing, certification, official endorsement or publication that
-has not been verified.
+Release: https://github.com/spamtroll/spamtroll-discourse/releases/tag/v1.0.0
+
+Checksum: https://github.com/spamtroll/spamtroll-discourse/releases/download/v1.0.0/spamtroll-discourse-1.0.0.tar.gz.sha256
+
+This is a third-party plugin, with no claimed official Discourse endorsement.
 
 ## Publication checklist
 
-- Finish actual supported-core verification and record exact commits/results.
-- Verify the committed distribution includes its license and matches version 1.0.0.
-- Publish/re-fetch the intended repository and release artifacts through an authorized
-  repository destination; verify links before inserting them in the announcement.
-- Obtain explicit authorization/account context for the final Meta post.
-- Record outcome, post URL and published version in canonical Spamtroll T-017.
+- [x] Actual supported-core verification and exact commits/results recorded.
+- [x] Committed distribution includes license and matches version 1.0.0.
+- [x] Public repository/release re-fetched and version/contents/checksum verified.
+- [ ] Obtain explicit authorization and an accessible account/session for the Meta post.
+- [ ] Record actual Meta post URL and publication outcome in canonical Spamtroll T-017.
